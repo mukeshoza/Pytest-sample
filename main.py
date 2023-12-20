@@ -33,7 +33,7 @@ class SeleniumTest:
         time_start = datetime.datetime.now()
         self.wait.until(EC.visibility_of_element_located((By.XPATH, check_page)))
 
-        # 1 check if the user can login into the page or not
+        # 1 check if the user can log in into the page or not
         self.driver.find_element(By.ID, username).send_keys(username_value)
         self.driver.find_element(By.ID, password).send_keys(password_value)
         self.driver.find_element(By.ID, submit).click()
