@@ -91,7 +91,7 @@ class TestSelenium:
             self.driver.save_screenshot(filename + 'filter_Z_A_unsuccessful.png')
             print("The filter Z-A doesn't works as expected")
 
-        # 3iii find all prices and look If they are sorted in high to low order or not
+        # 3iii find all prices and look If they are sorted in low to high order or not
         self.driver.find_element(By.CLASS_NAME, select_filter).click()
         self.driver.find_element(By.XPATH, low_to_high).click()
         items = self.driver.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
@@ -108,7 +108,7 @@ class TestSelenium:
             self.driver.save_screenshot(filename + 'filter_price_low_high_unsuccessful.png')
             print("The Price (Low to High) filter doesn't works as expected")
 
-        # 3iv find all prices and look If they are sorted in low to high order or not
+        # 3iv find all prices and look If they are sorted in high to low order or not
         self.driver.find_element(By.CLASS_NAME, select_filter).click()
         self.driver.find_element(By.XPATH, high_to_low).click()
         items = self.driver.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
@@ -127,7 +127,6 @@ class TestSelenium:
 
         # check If the logged-in user can check out or not
         self.driver.find_element(By.ID, checkout).click()
-        # self.driver.find_element(By.CLASS_NAME, cart_item)
         self.driver.find_element(By.XPATH, checkout_button).click()
         self.driver.find_element(By.ID, checkout_first_name).send_keys(first_name)
         self.driver.find_element(By.ID, checkout_last_name).send_keys(last_name)
