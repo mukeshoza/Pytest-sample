@@ -1,5 +1,3 @@
-import time
-
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,6 +10,7 @@ import os
 import datetime
 from locators import *
 import re
+import pytest
 
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -25,7 +24,7 @@ file_path = os.path.dirname(os.path.dirname(__file__))
 filename = os.path.join(file_path, 'leapfrog_assesment/screenshots/')
 
 
-class SeleniumTest:
+class TestSelenium:
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     driver.maximize_window()
     wait = WebDriverWait(driver, 60)
@@ -180,7 +179,7 @@ class SeleniumTest:
         self.driver.quit()
 
 
-test = SeleniumTest()
+test = TestSelenium()
 test.login_standard_user()
 test.locked_users()
 test.quit_browser()
