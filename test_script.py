@@ -1,4 +1,3 @@
-# test_selenium.py
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,6 +10,7 @@ import os
 import datetime
 import re
 from locators import *
+import pytest
 
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
