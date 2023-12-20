@@ -36,6 +36,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pip install pytest
-        export PYTHONPATH='https://github.com/mukeshoza/leapfrog_assesment/blob/0a489139ff40155ef977d096a4763cca44446675/main.py'
+        export PYTHONPATH='main.py'
         pytest
