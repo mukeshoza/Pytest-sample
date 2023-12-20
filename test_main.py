@@ -16,7 +16,9 @@ import re
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_argument("--hide-scrollbars")
-# options.add_argument("--headless")
+options.add_argument("--headless")
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 
 baseURL = 'https://www.saucedemo.com/'
 file_path = os.path.dirname(os.path.dirname(__file__))
