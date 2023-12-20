@@ -10,7 +10,6 @@ import os
 import datetime
 import re
 from locators import *
-import pytest
 
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
